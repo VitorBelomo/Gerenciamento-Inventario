@@ -23,7 +23,7 @@ Sistema fullstack para gerenciamento de produtos com operações de criar, lista
 
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 Acesse o frontend em: http://localhost:5173
