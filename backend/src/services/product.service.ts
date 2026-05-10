@@ -4,7 +4,7 @@ export async function getAllProducts() {
     return await productRepository.getAllProducts();
 }
 
-export async function getPRoductById(id: string) {
+export async function getProductById(id: string) {
     const product = await productRepository.getProductById(id);
 
     if (!product) {
@@ -24,13 +24,8 @@ export async function createProduct(data: {
     return await productRepository.createProduct(data);
 }
 
-export async function updateProduct(id: string, data: {
-  name?: string,
-  description?: string,
-  price?: number,
-  stock_quantity?: number
-}) {
-  return await productRepository.updateProduct(id, data);
+export async function updateProduct(id: string, data: any) {
+  return await productRepository.updateProduct(id, data)
 }
 
 export async function deleteProduct(id: string) {
