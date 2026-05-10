@@ -52,6 +52,7 @@ export default function ProductsPage() {
         <thead>
           <tr className="bg-gray-100">
             <th className="border p-2 text-left">Nome</th>
+            <th className="border p-2 text-left">Descrição</th>
             <th className="border p-2 text-left">Preço</th>
             <th className="border p-2 text-left">Estoque</th>
             <th className="border p-2 text-left">Ações</th>
@@ -61,6 +62,7 @@ export default function ProductsPage() {
           {filtered.map(product => (
             <tr key={product.id}>
               <td className="border p-2">{product.name}</td>
+              <td className="border p-2">{product.description}</td>
               <td className="border p-2">R$ {Number(product.price).toFixed(2)}</td>
               <td className="border p-2">{product.stock_quantity}</td>
               <td className="border p-2 flex gap-2">
