@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:16
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 737307
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: inventario
     ports:
       - "5432:5432"
@@ -15,7 +13,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_URL: postgresql://postgres:737307@db:5432/inventario
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/inventario
     depends_on:
       - db
 
@@ -23,7 +21,5 @@ services:
     build: ./frontend
     ports:
       - "5173:5173"
-    environment:
-      VITE_API_URL: http://backend:3000
     depends_on:
       - backend
