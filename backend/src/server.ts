@@ -1,13 +1,15 @@
-import express from 'express';
-import productRoutes from './routes/product.routes.js';
+import express from 'express'
+import cors from 'cors'
+import productRoutes from './routes/product.routes.js'
 
-const app = express();
+const app = express()
 
-app.use(express.json());
-app.use(productRoutes);
+app.use(cors())
+app.use(express.json())
+app.use(productRoutes)
 
-const PORT = 3000;
+const PORT = 3000
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando no http://localhost:${PORT}`);
-});
+  console.log(`Servidor rodando em http://localhost:${PORT}`)
+})
